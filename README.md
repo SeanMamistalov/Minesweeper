@@ -4,7 +4,7 @@ By Sean Mamistalov</h1>
 
 
 Screens:
-<p align="center">Load page: </p>
+Load page;
 ![Screenshot 2023-12-31 at 14 55 24](https://github.com/SeanMamistalov/Minesweeper/assets/139708154/a6381c64-44f6-47ab-baea-5a05f3d665f0)
 
 
