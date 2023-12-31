@@ -17,3 +17,4 @@
 
 <h3 align="center">You lose:</h3>
 
+![WhatsApp Image 2023-12-31 at 16 07 55](https://github.com/SeanMamistalov/Minesweeper/assets/139708154/ed64d6b1-fe54-4f9c-b974-7c0cba0d0ff7)
