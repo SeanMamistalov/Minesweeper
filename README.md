@@ -12,9 +12,8 @@
 
 <h3 align="center">You win: </h3>
 
-![WhatsApp Image 2023-12-31 at 16 04 40](https://github.com/SeanMamistalov/Minesweeper/assets/139708154/f7d59b4f-95ac-4612-a284-388614c2f692)
+![WhatsApp Image 2023-12-31 at 16 05 06](https://github.com/SeanMamistalov/Minesweeper/assets/139708154/3a6c86e2-6c04-4d2e-be68-c6a6acc7bd12)
 
 
 <h3 align="center">You lose:</h3>
 
-![WhatsApp Image 2023-12-31 at 16 04 40](https://github.com/SeanMamistalov/Minesweeper/assets/139708154/f411e5f1-19b7-4c5c-90e0-51aa4c0ac474)
