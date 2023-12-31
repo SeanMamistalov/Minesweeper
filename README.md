@@ -1,5 +1,5 @@
 # Minesweeper
-<h1 align="center">Oceansweeper 👋<Br>
+<h1 align="center">Oceansweeper ⋆｡𖦹 °🐋⋆｡˚ <Br>
 By Sean Mamistalov</h1>
 
 
