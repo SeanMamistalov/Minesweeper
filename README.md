@@ -3,7 +3,7 @@
 ⋆｡𖦹 °🐋⋆｡˚ By Sean Mamistalov⋆｡𖦹 °🐋⋆｡˚</h1>
 
 
-<h2 align="center"> Screens:</h2>
+<h2 align="center"> ⋆｡𖦹 °🐋⋆｡˚ Screens: ⋆｡𖦹 °🐋⋆｡˚</h2>
 <h3 align="center">Load page: </h3>
 
 ![Screenshot 2023-12-31 at 14 55 24](https://github.com/SeanMamistalov/Minesweeper/assets/139708154/a6381c64-44f6-47ab-baea-5a05f3d665f0)
