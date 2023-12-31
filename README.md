@@ -1,4 +1,3 @@
-<header align="center"># ⋆｡𖦹 °🐋⋆｡˚ Minesweeper ⋆｡𖦹 °🐋⋆｡˚ <header>
 <h1 align="center">⋆｡𖦹 °🐋⋆｡˚ Oceansweeper ⋆｡𖦹 °🐋⋆｡˚ <Br>
 ⋆｡𖦹 °🐋⋆｡˚ By Sean Mamistalov⋆｡𖦹 °🐋⋆｡˚</h1>
 
