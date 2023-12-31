@@ -1,6 +1,6 @@
 # Minesweeper
 Oceansweeper
-![Uploading Screenshot 2023-12-31 at 14.55.24.png…]()
+![Screenshot 2023-12-31 at 14 55 24](https://github.com/SeanMamistalov/Minesweeper/assets/139708154/04a93907-6b81-4f3f-9416-9961543c08be)
 
 
 
