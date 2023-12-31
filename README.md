@@ -9,6 +9,7 @@ Load page;
 
 
 <h2 align="center">You win: </h2>
+
 ![WhatsApp Image 2023-12-31 at 14 46 07](https://github.com/SeanMamistalov/Minesweeper/assets/139708154/2010bc43-8787-4ed9-8602-98282682b0c2)
 
 
