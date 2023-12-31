@@ -1,11 +1,11 @@
 # Minesweeper
-Oceansweeper
-![Screenshot 2023-12-31 at 14 55 24](https://github.com/SeanMamistalov/Minesweeper/assets/139708154/04a93907-6b81-4f3f-9416-9961543c08be)
-
+**Oceansweeper
+**
 
 
 Screens:
 Load page:
+![Screenshot 2023-12-31 at 14 55 24](https://github.com/SeanMamistalov/Minesweeper/assets/139708154/04a93907-6b81-4f3f-9416-9961543c08be)
 
 You win:
 ![WhatsApp Image 2023-12-31 at 14 46 07](https://github.com/SeanMamistalov/Minesweeper/assets/139708154/cf782633-57a6-4d2b-8bf5-7fd25c4b15be)
