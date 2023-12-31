@@ -1,6 +1,6 @@
 # Minesweeper
-<h1 align="center">Oceansweeper ⋆｡𖦹 °🐋⋆｡˚ <Br>
-By Sean Mamistalov</h1>
+<h1 align="center">⋆｡𖦹 °🐋⋆｡˚ Oceansweeper ⋆｡𖦹 °🐋⋆｡˚ <Br>
+⋆｡𖦹 °🐋⋆｡˚ By Sean Mamistalov⋆｡𖦹 °🐋⋆｡˚</h1>
 
 
 <h2 align="center"> Screens:</h2>
