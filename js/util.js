@@ -63,3 +63,29 @@ function renderCell(location, value) {
   elCell.innerHTML = value;
   elCell.classList.add(`num-color-${value}`);
 }
+
+function startTimer() {
+  if (gClicksNum === 1) gGameInterval = setInterval(setTime, 1000);
+}
+
+function setTime() {
+  ++totalSeconds;
+  secondsLabel.innerHTML = pad(totalSeconds % 60);
+  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+}
+
+function pad(val) {
+  var valString = val + "";
+  if (valString.length < 2) {
+    return "0" + valString;
+  } else {
+    return valString;
+  }
+}
+
+function drawCell() {
+  var randIdx = getRandomInt(0, gBoard.length);
+  var rand2ndIdx = getRandomInt(0, gBoard.length);
+  var randCell = gBoard[randIdx][rand2ndIdx];
+  return randCell;
+}
