@@ -1,6 +1,5 @@
 function onHintClick() {
     if (gHints > 0 && !gIsHint) {
-      gIsHint = true;
   
       var nonMineCells = [];
       for (var i = 0; i < gBoard.length; i++) {
