@@ -37,14 +37,9 @@ function cellClicked(elCell, i, j) {
     if (!currCell.isShown) {
         // Model
         currCell.isShown = true;
-        // DOM
-        elCell.classList.add("opened");
-        gClicksNum++;
-        gGame.shownCount++;
-        startTimer(); // Start timer only on first click
-        checkVictory(); // Check maybe its the last cell
+        isWin (elCell);
         if (currCell.isMine) {
-            //  console.log('game over') // When clicking on Mine
+            // //  console.log('game over') // When clicking on Mine
             if (isFirstClick) {
                 return handleFirstClick(currCell);
             }
@@ -52,8 +47,9 @@ function cellClicked(elCell, i, j) {
             gBoard[i][j].isShown = true;
             // DOM
             elCell.innerHTML = MINE;
-            gLives--; /
+            gLives--; 
             renderLives();
+            // isLose(elCell);
             if (gLives === 0) {
                 revealAllMine();
                 gGame.isOn = false;
@@ -71,6 +67,37 @@ function cellClicked(elCell, i, j) {
     checkVictory(); // Another check for win
 }
 
+function isWin (elCell) {
+    elCell.classList.add("opened");
+    gClicksNum++;
+    gGame.shownCount++;
+    startTimer(); // Start timer only on first click
+    checkVictory(); // Check maybe its the last cell
+}
+
+function handleFirstClick(cell) {
+    gBoard = createBoard();
+    setMines(cell);
+    renderBoard(gBoard);
+    isFirstClick = false;
+    gClicksNum--;
+    gGame.shownCount--;
+
+    var elCell = document.querySelector(`.cell-${cell.i}-${cell.j}`);
+    cellClicked(elCell, cell.i, cell.j);
+}
+
+// function isLose(elCell) {
+//     if (isFirstClick) {
+//         return handleFirstClick(currCell);
+//     }
+//     // Model
+//     gBoard[i][j].isShown = true;
+//     // DOM
+//     elCell.innerHTML = MINE;
+//     gLives--; 
+//     renderLives();
+// }
 // function cellClicked(elCell, i, j) {
 //     if (!gGame.isOn) return;
 
@@ -143,15 +170,3 @@ function cellClicked(elCell, i, j) {
 //     document.querySelector(".restart-btn").innerText = WON;
 //     // Additional actions for winning the game can be added here
 // }
-
-function handleFirstClick(cell) {
-    gBoard = createBoard();
-    setMines(cell);
-    renderBoard(gBoard);
-    isFirstClick = false;
-    gClicksNum--;
-    gGame.shownCount--;
-
-    var elCell = document.querySelector(`.cell-${cell.i}-${cell.j}`);
-    cellClicked(elCell, cell.i, cell.j);
-}
