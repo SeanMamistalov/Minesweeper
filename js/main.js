@@ -109,32 +109,3 @@ function checkVictory() {
   }
 }
 
-
-function safeMode() {
-  if (!gSafeClickCount) return;
-  if (!gGame.isOn) return
-  gIsSafeOn = true;
-  var safeClicks = [];
-  for (var i = 0; i < gBoard.length; i++) {
-      for (var j = 0; j < gBoard[0].length; j++) {
-          var currCell = gBoard[i][j];
-          if (!currCell.isMine && !currCell.isShown && !currCell.isMarked) {
-              safeClicks.push({ i, j });
-          }
-      }
-  }
-  shuffleArray(safeClicks);
-  var safeClick = safeClicks.pop();
-  var i = safeClick.i;
-  var j = safeClick.j
-  var elCell = document.querySelector(`.cell-${i}-${j}`)
-  elCell.innerText = 'SAFE';  elCell.style.color = 'blue'
-
-  setTimeout(function () {
-  
-  }, 2500)
-  gSafeClickCount--
-  gIsSafeOn = false;
-  document.querySelector('.safe-counter').innerText = gSafeClickCount;
-
-}

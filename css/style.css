@@ -183,3 +183,8 @@ footer {
 .board td {
   padding: 8px;
 }
+
+.safeclick-img {
+ width: 200px;
+height: 50px;
+}
