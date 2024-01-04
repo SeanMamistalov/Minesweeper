@@ -1,5 +1,8 @@
 "use strict";
 
+var gSafeClickCount = 0
+var gIsSafeOn = false;
+
 function init() {
   gGame = {
     isOn: true,
@@ -21,6 +24,7 @@ function init() {
   } else {
     gLives = 3; // For other levels (Professional and Expert)
   }
+  gSafeClickCount = 3
   gHints = 3;
   gIsHint = false;
   renderLives();
@@ -93,6 +97,8 @@ function restartButton() {
 
 function checkVictory() {
   if (gGame.shownCount + gGame.markedMines === gLevel.size * gLevel.size) {
+    var sound = new Audio('Audio/win.mp3')
+    sound.play()
     gGame.isOn = false;
     clearInterval(gGameInterval);
     document.querySelector(".restart-btn").innerText = WON;
@@ -101,4 +107,34 @@ function checkVictory() {
     clearInterval(gGameInterval);
     document.querySelector(".restart-btn").innerText = DEAD;
   }
+}
+
+
+function safeMode() {
+  if (!gSafeClickCount) return;
+  if (!gGame.isOn) return
+  gIsSafeOn = true;
+  var safeClicks = [];
+  for (var i = 0; i < gBoard.length; i++) {
+      for (var j = 0; j < gBoard[0].length; j++) {
+          var currCell = gBoard[i][j];
+          if (!currCell.isMine && !currCell.isShown && !currCell.isMarked) {
+              safeClicks.push({ i, j });
+          }
+      }
+  }
+  shuffleArray(safeClicks);
+  var safeClick = safeClicks.pop();
+  var i = safeClick.i;
+  var j = safeClick.j
+  var elCell = document.querySelector(`.cell-${i}-${j}`)
+  elCell.innerText = 'SAFE';  elCell.style.color = 'blue'
+
+  setTimeout(function () {
+  
+  }, 2500)
+  gSafeClickCount--
+  gIsSafeOn = false;
+  document.querySelector('.safe-counter').innerText = gSafeClickCount;
+
 }

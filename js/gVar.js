@@ -8,6 +8,8 @@ var secondsLabel = document.getElementById("seconds");
 var gLives;
 var gTimer;
 var gBoard;
+var gSafeClickCount = 0
+var gIsSafeOn = false;
 var gClicksNum;
 var isFirstClick;
 var gLevel = {

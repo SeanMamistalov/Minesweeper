@@ -1,3 +1,5 @@
+'use strict'
+
 function onHintClick() {
     if (gHints > 0 && !gIsHint) {
   
