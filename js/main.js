@@ -104,7 +104,7 @@ function checkVictory() {
 
   if (shownCells === totalCells - totalMines) {
     // if (correctlyFlaggedMines === totalMines && shownCells === totalCells - totalMines) {
-    var sound = new Audio('Audio/win.mp3');
+    var sound = new Audio('audio/win.mp3');
     sound.play();
     gGame.isOn = false;
     revealAllMine()

@@ -97,7 +97,7 @@ function noLives() {
     revealAllMine();
     gGame.isOn = false;
     document.querySelector(".restart-btn").innerText = DEAD; // Put a BOMBED face
-    var sound = new Audio('Audio/losegame.wav') 
+    var sound = new Audio('audio/losegame.wav') 
     sound.play()
     clearInterval(gGameInterval); // Stop the timer
     return; // Exit the function or handle any other actions needed
