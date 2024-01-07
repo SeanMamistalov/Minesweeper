@@ -97,9 +97,14 @@ function restartButton() {
 }
 
 function checkVictory() {
-  if (gGame.shownCount + gGame.markedMines === gLevel.size * gLevel.size) {
-    var sound = new Audio('Audio/win.mp3')
-    sound.play()
+  const totalCells = gLevel.size * gLevel.size;
+  const totalMines = gLevel.mines;
+  const correctlyFlaggedMines = gGame.markedMines;
+  const shownCells = gGame.shownCount;
+
+  if (correctlyFlaggedMines === totalMines && shownCells === totalCells - totalMines) {
+    var sound = new Audio('Audio/win.mp3');
+    sound.play();
     gGame.isOn = false;
     clearInterval(gGameInterval);
     document.querySelector(".restart-btn").innerText = WON;

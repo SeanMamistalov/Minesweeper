@@ -27,7 +27,7 @@ function onRightClick(elCell, i, j) {
     }
 }
 
-function cellClicked(elCell, i, j) {
+function onCellClicked(elCell, i, j) {
     if (!gGame.isOn) return;
     var currCell = gBoard[i][j];
     if (currCell.isMarked) return; // Dont allow to click on marked cell
@@ -85,20 +85,27 @@ function handleFirstClick(cell) {
     gGame.shownCount--;
 
     var elCell = document.querySelector(`.cell-${cell.i}-${cell.j}`);
-    cellClicked(elCell, cell.i, cell.j);
+    onCellClicked(elCell, cell.i, cell.j);
 }
 
-function isLose(elCell,i, j) {
+function isLose(elCell, i, j) {
+    var currCell = gBoard[i][j];
+
     if (isFirstClick) {
         return handleFirstClick(currCell);
     }
+
     // Model
-    gBoard[i][j].isShown = true;
+    currCell.isShown = true;
     // DOM
     elCell.innerHTML = MINE;
     gLives--; 
     renderLives();
+    if (gLives === 0) {
+        noLives();
+    }
 }
+
 
 function noLives() {
     revealAllMine();

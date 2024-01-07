@@ -1,8 +1,8 @@
 'use strict'
 
 
-const MINE = "💣";
-const FLAG = "🚩";
+const MINE = "🦑";
+const FLAG = "🌊";
 const LIVE = "💙";
 const WON = "🏆 You WON congrats! 🏆";
 const HINT = "💡";

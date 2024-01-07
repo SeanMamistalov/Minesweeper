@@ -11,7 +11,7 @@ function renderBoard(board) {
       var minesCount = setMinesNegsCount(board, i, j);
       currCell.minesAroundCount = minesCount; // Add the negMines to every cell object
       strHTML += `<td class="cell ${className}"
-        onclick="cellClicked(this, ${i},${j})"
+        onclick="onCellClicked(this, ${i},${j})"
         oncontextmenu="onRightClick(this, ${i},${j}, event)" ></td>`;
     }
     strHTML += "</tr>";

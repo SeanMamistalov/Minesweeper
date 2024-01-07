@@ -65,14 +65,22 @@ function renderCell(location, value) {
 }
 
 function startTimer() {
-  if (gClicksNum === 1) gGameInterval = setInterval(setTime, 1000);
-}
+  if (!gGame.isOn) {
+    clearInterval(gGameInterval);
+    return;
+  }
 
-function setTime() {
-  ++totalSeconds;
+  totalSeconds++;
   secondsLabel.innerHTML = pad(totalSeconds % 60);
   minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
 }
+
+
+// function setTime() {
+//   ++totalSeconds;
+//   secondsLabel.innerHTML = pad(totalSeconds % 60);
+//   minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+// }
 
 function pad(val) {
   var valString = val + "";

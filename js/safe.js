@@ -10,7 +10,7 @@ function safeMode() {
             var currCell = gBoard[i][j];
             if (!currCell.isMine && !currCell.isShown && !currCell.isMarked) {
                 safeClicks.push({ i, j });
-                var sound = new Audio('Audio/safe.mp3') 
+                var sound = new Audio('Audio/safe.mp3')
                 sound.play()
             }
         }
@@ -20,13 +20,18 @@ function safeMode() {
     var i = safeClick.i;
     var j = safeClick.j
     var elCell = document.querySelector(`.cell-${i}-${j}`)
-    elCell.innerText = 'SAFE';  elCell.style.color = 'blue'
-  
+    elCell.innerText = 'SAFE'; elCell.style.color = 'blue'
+    var elCell = document.querySelector(`.cell-${i}-${j}`);
+    // console.log(elCell); 
+    // if (!elCell) {
+    //     //console.error('No matching element found for selector');
+    //     return;
+
     setTimeout(function () {
-    
+
     }, 3000)
     gSafeClickCount--
     gIsSafeOn = false;
     document.querySelector('.safe-counter').innerText = gSafeClickCount;
-  
-  }
+
+}
