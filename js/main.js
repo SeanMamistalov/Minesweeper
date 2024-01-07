@@ -90,8 +90,8 @@ function revealNegs(cellI, cellJ) {
 }
 
 function restartButton() {
-  clearInterval(gGameInterval); // Clear the timer interval
   gClicksNum = 0;
+  clearInterval(gGameInterval); // Clear the timer interval
   document.querySelector(".restart-btn").innerText = RESTART;
   init(); // Reinitialize the game
 }
