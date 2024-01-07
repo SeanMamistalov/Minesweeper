@@ -10,7 +10,7 @@ function safeMode() {
             var currCell = gBoard[i][j];
             if (!currCell.isMine && !currCell.isShown && !currCell.isMarked) {
                 safeClicks.push({ i, j });
-                var sound = new Audio('Audio/safe.mp3')
+                var sound = new Audio('audio/safe.mp3')
                 sound.play()
             }
         }
