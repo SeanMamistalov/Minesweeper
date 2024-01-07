@@ -20,7 +20,7 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
-  min-height: 100vh;
+  min-height: 100 vh;
   display: flex;
   flex-direction: column;
 }
