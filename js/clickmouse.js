@@ -3,6 +3,7 @@
 
 function onRightClick(elCell, i, j) {
     event.preventDefault();
+    
     if (gBoard[i][j].isMarked) {
         // Right click on a Marked cell
         gGame.markedCount--;
@@ -12,6 +13,8 @@ function onRightClick(elCell, i, j) {
         elCell.innerHTML = "";
         gClicksNum++;
         if (gBoard[i][j].isMine) gGame.markedMines--;
+        checkVictory();
+
     } else {
         // Right click on any other cell
         if (gGame.markedCount === gLevel.mines) return; // Dont allow to use more flag than mines
@@ -34,46 +37,30 @@ function onCellClicked(elCell, i, j) {
     if (gIsHint) {
         return revealNegs(i, j);
     }
-    if (!currCell.isShown) {
-        // Model
-        currCell.isShown = true;
-        isWin (elCell);
-        if (currCell.isMine) {
-            // //  console.log('game over') // When clicking on Mine
-            // if (isFirstClick) {
-            //     return handleFirstClick(currCell);
-            // }
-            // // Model
-            // gBoard[i][j].isShown = true;
-            // // DOM
-            // elCell.innerHTML = MINE;
-            // gLives--; 
-            // renderLives();
-             isLose(elCell, i, j);
-            if (gLives === 0) {
-                noLives();
-                // revealAllMine();
-                // gGame.isOn = false;
-                // document.querySelector(".restart-btn").innerText = DEAD; // Put a BOMBED face
-                // var sound = new Audio('Audio/losegame.wav') 
-                // sound.play()
-                // clearInterval(gGameInterval); // Stop the timer
-                // return; // Exit the function or handle any other actions needed
-            }
-        } else if (currCell.minesAroundCount) {
-            renderCell(currCell, currCell.minesAroundCount); // When clicking on cell with Negs only show the Num
-        } else expandMines(gBoard, i, j); // When clicking on cell without Negs, start showing  
-    }
+    if (currCell.isShown || currCell.isMarked) return
+    showCell (elCell, i , j);
     isFirstClick = false;
     checkVictory(); // Another check for win
+    
 }
 
-function isWin (elCell) {
+function showCell (elCell, i , j ) {
+    var cell = gBoard[i][j] 
+    cell.isShown = true;
+    if (cell.isMine) {
+        isLose(cell, elCell);
+        if (gLives === 0) {
+            noLives();
+        }
+    } else if (cell.minesAroundCount) {
+        gGame.shownCount++;
+        renderCell(cell, cell.minesAroundCount); // When clicking on cell with Negs only show the Num
+    } else {
+        expandMines(gBoard, i, j) // When clicking on cell without Negs, start showing  
+        gGame.shownCount++;
+        gClicksNum++;
+    }
     elCell.classList.add("opened");
-    gClicksNum++;
-    gGame.shownCount++;
-    startTimer(); // Start timer only on first click
-    checkVictory(); // Check maybe its the last cell
 }
 
 function handleFirstClick(cell) {
@@ -83,20 +70,18 @@ function handleFirstClick(cell) {
     isFirstClick = false;
     gClicksNum--;
     gGame.shownCount--;
-
+    startTimer();
     var elCell = document.querySelector(`.cell-${cell.i}-${cell.j}`);
     onCellClicked(elCell, cell.i, cell.j);
 }
 
-function isLose(elCell, i, j) {
-    var currCell = gBoard[i][j];
-
+function isLose(cell , elCell) {
     if (isFirstClick) {
-        return handleFirstClick(currCell);
+        return handleFirstClick(cell);
     }
 
     // Model
-    currCell.isShown = true;
+    cell.isShown = true;
     // DOM
     elCell.innerHTML = MINE;
     gLives--; 
