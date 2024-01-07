@@ -2,19 +2,17 @@ h1 {
   padding-top: 10px;
   color: #3498db;
   text-align: center;
-font-family: 'Oswald', serif;
-font-size: 80px;
+  font-family: "Oswald", serif;
+  font-size: 80px;
   text-shadow: rgb(14, 48, 116) 1px 0 10px;
 }
 
-.opening{
-  background-image: url('ocean.gif');
+.opening {
+  background-image: url("ocean.gif");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   animation: playGif 3s linear forwards;
-
-  
 }
 
 body {
@@ -22,12 +20,15 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 table {
   margin: 20px auto;
   border-collapse: collapse;
-  border: 5px solid #3498db; 
+  border: 5px solid #3498db;
 }
 
 td {
@@ -36,17 +37,17 @@ td {
   text-align: center;
   transition: 0.5s;
   padding: 10px;
-  border: 1px solid #ccc; 
+  border: 1px solid #ccc;
 }
 
 td:hover {
   cursor: pointer;
-  background-color: lightblue; 
+  background-color: lightblue;
 }
 
 .levels {
   display: inline-block;
-  border: 2px solid #2980b9; 
+  border: 2px solid #2980b9;
   background-color: #f0f0f0;
   justify-content: space-around;
   align-items: center;
@@ -72,7 +73,7 @@ td:hover {
 
 /* header {
   background-color: #3498db; */
-  /* text-align: center;
+/* text-align: center;
    padding: 20px 0;
   margin-bottom: 20px; 
 } */
@@ -95,7 +96,7 @@ footer {
   background-color: #222;
   color: #fff;
   padding: 30px 0;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   font-size: 14px;
   text-align: center;
 }
@@ -111,7 +112,6 @@ footer {
 }
 
 .restart-btn {
-
   text-shadow: rgb(14, 48, 116) 1px 0 10px;
   padding: 10px 25px;
   border: none;
@@ -149,16 +149,16 @@ footer {
   align-items: center;
   margin-top: 20px;
   font-size: 24px;
-  color: #2980b9; 
+  color: #2980b9;
+  flex-grow: 1;
 }
 
 .timer {
-
   display: inline-block;
   padding: 10px 20px;
-  border: 2px solid #2980b9; 
+  border: 2px solid #2980b9;
   border-radius: 5px;
-  background-color: #f0f0f0; 
+  background-color: #f0f0f0;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -171,20 +171,20 @@ footer {
   height: 40px;
   text-align: center;
   border: 1px solid #2980b9;
-  background-color: rgba(173, 216, 230, 0.5); 
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+  background-color: rgba(173, 216, 230, 0.5);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .opened {
-  background-color: lightblue; 
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
-  }
+  background-color: lightblue;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
 
 .board td {
   padding: 8px;
 }
 
 .safeclick-img {
- width: 200px;
-height: 50px;
+  width: 200px;
+  height: 50px;
 }

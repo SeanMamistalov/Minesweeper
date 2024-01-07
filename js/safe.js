@@ -24,7 +24,7 @@ function safeMode() {
   
     setTimeout(function () {
     
-    }, 2500)
+    }, 3000)
     gSafeClickCount--
     gIsSafeOn = false;
     document.querySelector('.safe-counter').innerText = gSafeClickCount;

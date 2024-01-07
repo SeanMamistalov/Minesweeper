@@ -37,31 +37,28 @@ function cellClicked(elCell, i, j) {
     if (!currCell.isShown) {
         // Model
         currCell.isShown = true;
-        // DOM
-        elCell.classList.add("opened");
-        gClicksNum++;
-        gGame.shownCount++;
-        startTimer(); // Start timer only on first click
-        checkVictory(); // Check maybe its the last cell
+        isWin (elCell);
         if (currCell.isMine) {
-            //  console.log('game over') // When clicking on Mine
-            if (isFirstClick) {
-                return handleFirstClick(currCell);
-            }
-            // Model
-            gBoard[i][j].isShown = true;
-            // DOM
-            elCell.innerHTML = MINE;
-            gLives--; // Remove one Life
-            renderLives();
+            // //  console.log('game over') // When clicking on Mine
+            // if (isFirstClick) {
+            //     return handleFirstClick(currCell);
+            // }
+            // // Model
+            // gBoard[i][j].isShown = true;
+            // // DOM
+            // elCell.innerHTML = MINE;
+            // gLives--; 
+            // renderLives();
+             isLose(elCell, i, j);
             if (gLives === 0) {
-                revealAllMine();
-                gGame.isOn = false;
-                document.querySelector(".restart-btn").innerText = DEAD; // Put a BOMBED face
-                var sound = new Audio('Audio/losegame.wav') 
-                sound.play()
-                clearInterval(gGameInterval); // Stop the timer
-                return; // Exit the function or handle any other actions needed
+                noLives();
+                // revealAllMine();
+                // gGame.isOn = false;
+                // document.querySelector(".restart-btn").innerText = DEAD; // Put a BOMBED face
+                // var sound = new Audio('Audio/losegame.wav') 
+                // sound.play()
+                // clearInterval(gGameInterval); // Stop the timer
+                // return; // Exit the function or handle any other actions needed
             }
         } else if (currCell.minesAroundCount) {
             renderCell(currCell, currCell.minesAroundCount); // When clicking on cell with Negs only show the Num
@@ -69,6 +66,14 @@ function cellClicked(elCell, i, j) {
     }
     isFirstClick = false;
     checkVictory(); // Another check for win
+}
+
+function isWin (elCell) {
+    elCell.classList.add("opened");
+    gClicksNum++;
+    gGame.shownCount++;
+    startTimer(); // Start timer only on first click
+    checkVictory(); // Check maybe its the last cell
 }
 
 function handleFirstClick(cell) {
@@ -82,3 +87,97 @@ function handleFirstClick(cell) {
     var elCell = document.querySelector(`.cell-${cell.i}-${cell.j}`);
     cellClicked(elCell, cell.i, cell.j);
 }
+
+function isLose(elCell,i, j) {
+    if (isFirstClick) {
+        return handleFirstClick(currCell);
+    }
+    // Model
+    gBoard[i][j].isShown = true;
+    // DOM
+    elCell.innerHTML = MINE;
+    gLives--; 
+    renderLives();
+}
+
+function noLives() {
+    revealAllMine();
+    gGame.isOn = false;
+    document.querySelector(".restart-btn").innerText = DEAD; // Put a BOMBED face
+    var sound = new Audio('Audio/losegame.wav') 
+    sound.play()
+    clearInterval(gGameInterval); // Stop the timer
+    return; // Exit the function or handle any other actions needed
+}
+// function cellClicked(elCell, i, j) {
+//     if (!gGame.isOn) return;
+
+//     var currCell = gBoard[i][j];
+
+//     if (currCell.isMarked) return;
+    
+//     if (gIsHint) {
+//         return revealNegs(i, j);
+//     }
+
+//     if (!currCell.isShown) {
+//         handleCellClick(currCell, elCell, i, j);
+//     }
+
+//     checkGameStatus();
+// }
+
+// function handleCellClick(currCell, elCell, i, j) {
+//     currCell.isShown = true;
+//     elCell.classList.add("opened");
+//     gClicksNum++;
+//     gGame.shownCount++;
+//     startTimer();
+
+//     if (currCell.isMine) {
+//         handleMineClick(currCell, elCell, i, j);
+//     } else if (currCell.minesAroundCount) {
+//         renderCell(currCell, currCell.minesAroundCount);
+//     } else {
+//         expandMines(gBoard, i, j);
+//     }
+// }
+
+// function handleMineClick(currCell, elCell, i, j) {
+//     if (isFirstClick) {
+//         return handleFirstClick(currCell);
+//     }
+
+//     gBoard[i][j].isShown = true;
+//     elCell.innerHTML = MINE;
+//     gLives--;
+//     renderLives();
+
+//     if (gLives === 0) {
+//         handleGameOver();
+//     }
+// }
+
+// function handleGameOver() {
+//     revealAllMine();
+//     gGame.isOn = false;
+//     document.querySelector(".restart-btn").innerText = DEAD;
+//     var sound = new Audio('Audio/losegame.wav');
+//     sound.play();
+//     clearInterval(gGameInterval);
+// }
+
+// function checkGameStatus() {
+//     if (gGame.shownCount + gGame.markedMines === gLevel.size * gLevel.size) {
+//         handleGameWin();
+//     } else if (gLives === 0) {
+//         handleGameOver();
+//     }
+// }
+
+// function handleGameWin() {
+//     gGame.isOn = false;
+//     clearInterval(gGameInterval);
+//     document.querySelector(".restart-btn").innerText = WON;
+//     // Additional actions for winning the game can be added here
+// }
