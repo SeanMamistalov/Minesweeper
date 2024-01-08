@@ -1,5 +1,6 @@
 'use strict'
 
+var isFirstClick;
 
 function onRightClick(elCell, i, j) {
     event.preventDefault();
@@ -32,6 +33,12 @@ function onRightClick(elCell, i, j) {
 
 function onCellClicked(elCell, i, j) {
     if (!gGame.isOn) return;
+    
+    if (isFirstClick) {
+        startTimer()
+        isFirstClick = false
+        gGameInterval = setInterval(startTimer, 1000)
+    }
     var currCell = gBoard[i][j];
     if (currCell.isMarked) return; // Dont allow to click on marked cell
     if (gIsHint) {

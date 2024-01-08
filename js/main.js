@@ -31,7 +31,7 @@ function init() {
   renderHints();
   document.querySelector(".restart-btn").innerText = RESTART;
   clearInterval(gGameInterval);
-  gGameInterval = setInterval(startTimer, 3000);
+//gGameInterval = setInterval(startTimer, 3000);
 }
 
 function createBoard() {

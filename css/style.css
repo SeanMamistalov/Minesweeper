@@ -7,13 +7,15 @@ h1 {
   text-shadow: rgb(14, 48, 116) 1px 0 10px;
 }
 
-.opening {
-  background-image: url("ocean.gif");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  animation: playGif 3s linear forwards;
-}
+  #background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
+
 
 body {
   margin: 0;
@@ -23,6 +25,7 @@ body {
   min-height: 100 vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 table {
@@ -89,7 +92,7 @@ td:hover {
   color: white;
 } */
 footer {
-  display: inl;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
