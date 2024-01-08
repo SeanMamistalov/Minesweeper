@@ -11,6 +11,7 @@ function safeMode() {
             if (!currCell.isMine && !currCell.isShown && !currCell.isMarked) {
                 safeClicks.push({ i, j });
                 var sound = new Audio('audio/safe.mp3')
+                sound.volume = 0.1;
                 sound.play()
             }
         }
