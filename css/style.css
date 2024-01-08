@@ -190,3 +190,13 @@ footer {
 .safeclick-img:hover {
   cursor: pointer;
 }
+
+
+.descriptions {
+  padding-top: 10px;
+  color: white;
+  text-align: center;
+  font-family: "Oswald", serif;
+  font-size: 25px;
+  text-shadow: rgb(14, 48, 116) 3px 0 10px;
+}
