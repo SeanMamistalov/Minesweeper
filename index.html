@@ -16,7 +16,7 @@
   <video autoplay muted loop id="background-video">
     <source src="video/ocean.mp4" type="video/mp4">
   </video>
-  
+
   <div class="timer-container">
     <h1>Oceansweeper</h1>
 
@@ -27,16 +27,17 @@
     <button class="restart-btn" onclick="restartButton()">↻</button>
 
     <div class="levels">
-      <button class="firststage" onclick="changeLevel(this); init();">
+      <button class="firststage" onclick="scrollToGameSection('Beginner'); changeLevel(this); init();">
         Beginner
       </button>
-      <button class="secondstage" onclick="changeLevel(this); init();">
+      <button class="secondstage" onclick="scrollToGameSection('Professional'); changeLevel(this); init();">
         Professional
       </button>
-      <button class="thirdstage" onclick="changeLevel(this); init();">
+      <button class="thirdstage" onclick="scrollToGameSection('Expert'); changeLevel(this); init();">
         Expert
       </button>
     </div>
+
 
     <div class="clues">
       <div class="lives">❤️❤️❤️</div>
@@ -49,22 +50,23 @@
     <div class="safe-click">
       <img onclick="safeMode()" class="safeclick-img" src="css/safeclick.png" alt="safeclick">
     </div>
-      <footer>
-        <div class="footer-content">
-          <p>&copy; 2023 Sean's Minesweeper. All rights reserved.</p>
-          <p>Contact: <a href="mailto:MamistalovSean@gmail.com">MamistalovSean@gmail.com</a></p>
-      </footer>
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2023 Sean's Minesweeper. All rights reserved.</p>
+        <p>Contact: <a href="mailto:MamistalovSean@gmail.com">MamistalovSean@gmail.com</a></p>
+    </footer>
 
-      <script src="js/util.js"></script>
-      <script src="js/main.js"></script>
-      <script src="js/constants.js"></script>
-      <script src="js/gvariables.js"></script>
-      <script src="js/render.js"></script>
-      <script src="js/hint.js"></script>
-      <script src="js/level.js"></script>
-      <script src="js/mines.js"></script>
-      <script src="js/clickmouse.js"></script>
-      <script src="js/safe.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/constants.js"></script>
+    <script src="js/gvariables.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/hint.js"></script>
+    <script src="js/level.js"></script>
+    <script src="js/mines.js"></script>
+    <script src="js/clickmouse.js"></script>
+    <script src="js/safe.js"></script>
+    <script src="js/scrolldown.js"></script>
 
 
 </body>
