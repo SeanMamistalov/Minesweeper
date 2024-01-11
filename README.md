@@ -7,14 +7,14 @@
 
 <h3 align="center">Load Page: </h3>
 
-![Screenshot 2024-01-08 at 11 20 16](https://github.com/SeanMamistalov/Minesweeper/assets/139708154/1d8f5f54-4621-4cf4-9561-f8d0f072482b)
+![Screenshot 2024-01-11 at 12 20 47](https://github.com/SeanMamistalov/Minesweeper/assets/139708154/37245079-dc45-4c1e-9b9a-5802d57cb433)
 
 
 <h3 align="center">You Win: </h3>
 
-![Screenshot 2024-01-08 at 11 20 28](https://github.com/SeanMamistalov/Minesweeper/assets/139708154/05112728-0b94-49c7-ad02-a3a4f985fb94)
+![Screenshot 2024-01-11 at 12 21 15](https://github.com/SeanMamistalov/Minesweeper/assets/139708154/cd8eb60e-c24b-40b5-856d-f6a23ff6fc56)
 
 
 <h3 align="center">You Lose:</h3>
 
-![Screenshot 2024-01-08 at 11 21 03](https://github.com/SeanMamistalov/Minesweeper/assets/139708154/acc0f7fa-8ef4-4644-a3a2-89295b86b133)
+![Screenshot 2024-01-11 at 12 21 29](https://github.com/SeanMamistalov/Minesweeper/assets/139708154/4532802a-26b4-447d-adc0-71ae00dc9114)
